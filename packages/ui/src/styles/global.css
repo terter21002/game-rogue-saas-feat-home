@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 18 43% 98%;
+    --foreground: 28 91% 54%;
+    --muted: 0 13% 95%;
+    --muted-foreground: 0 0% 38%;
+    --popover: 18 43% 98%;
+    --popover-foreground: 18 72% 3%;
+    --card: 18 43% 97%;
+    --card-foreground: 18 72% 2%;
+    --border: 18 8% 92%;
+    --input: 18 8% 92%;
+    --primary: 28 91% 54%;
+    --primary-hover: 28 78% 38%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 81%;
+    --secondary-foreground: 0 0% 21%;
+    --accent: 0 9% 72%;
+    --accent-foreground: 0 9% 12%;
+    --destructive: 10 94% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 28 91% 54%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 18 36% 2%;
+    --foreground: 28 91% 54%;
+    --muted: 18 13% 5%;
+    --muted-foreground: 18 0% 62%;
+    --popover: 18 36% 2%;
+    --popover-foreground: 18 17% 97%;
+    --card: 18 36% 3%;
+    --card-foreground: 18 17% 98%;
+    --border: 18 8% 14%;
+    --input: 18 8% 14%;
+    --primary: 28 91% 54%;
+    --primary-hover: 28 78% 38%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 18 5% 8%;
+    --secondary-foreground: 18 5% 68%;
+    --accent: 18 12% 14%;
+    --accent-foreground: 18 12% 74%;
+    --destructive: 10 94% 60%;
+    --destructive-foreground: 0 0% 0%;
+    --ring: 28 91% 54%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background bg-primary-hover border-primary text-foreground;
+  }
+  :root,
+  .dark {
+    --nextui-primary: var(--primary) !important;
+    --nextui-primary-hover: var(--primary-hover) !important;
+    --nextui-primary-foreground: var(--primary-foreground) !important;
+    --nextui-secondary: var(--secondary) !important;
+    --nextui-secondary-foreground: var(--secondary-foreground) !important;
+    --nextui-danger: var(--destructive) !important;
+    --nextui-danger-foreground: var(--destructive-foreground) !important;
+    --nextui-default: var(--muted) !important;
+    --nextui-default-foreground: var(--muted-foreground) !important;
+    --nextui-radius-medium: var(--radius) !important;
+  }
+}

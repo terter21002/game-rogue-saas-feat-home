@@ -1,0 +1,40 @@
+{
+  "name": "with-docker",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean && rm -rf .turbo && rm -rf node_modules",
+    "dev": "dotenv -- turbo run dev",
+    "type-check": "turbo type-check",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "prettier": "turbo run prettier",
+    "prettier:fix": "turbo run prettier:fix",
+    "test": "turbo run test",
+    "storybook": "turbo run storybook",
+    "g:lint-staged-files": "lint-staged --allow-empty",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.0"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:^",
+    "dotenv-cli": "^7.4.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "shell-quote": "^1.8.1",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@9.0.4",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=7.0.0"
+  }
+}

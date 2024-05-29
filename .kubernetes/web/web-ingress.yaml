@@ -1,0 +1,24 @@
+# https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: game-rogue-web
+spec:
+  defaultBackend:
+    service:
+      name: "web-service"
+      port:
+        number: 3000
+  rules:
+  - host: gameroguetest.com
+    http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: web-service
+            port:
+              number: 3000

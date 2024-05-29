@@ -1,0 +1,35 @@
+{
+  "name": "@repo/types",
+  "version": "1.0.0",
+  "license": "MIT",
+  "module": "./dist",
+  "dependencies": {
+    "@repo/typescript-config": "workspace:^",
+    "zod": "^3.23.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js",
+      "require": "./dist/*.js"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "tsc --watch",
+    "build": "tsc"
+  }
+}

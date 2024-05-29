@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+  annotations:
+    cloud.google.com/backend-config: '{"ports": {"3000":"global-backendconfig"}}'
+    cloud.google.com/neg: '{"ingress": true}'
+  labels:
+    app: web
+spec:
+  selector:
+    app: web
+  type: ClusterIP
+  ports:
+  - name: web
+    protocol: TCP
+    port: 3000
+    targetPort: 3000

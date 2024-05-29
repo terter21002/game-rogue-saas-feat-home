@@ -1,0 +1,494 @@
+{
+	"info": {
+		"_postman_id": "9fadb548-ffc4-44db-87e3-0c05c72c5fda",
+		"name": "Game Rogue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "26246601-9fadb548-ffc4-44db-87e3-0c05c72c5fda"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "auth.organization.get",
+					"id": "1c65e5ee-f253-42e8-bb9e-713588ecf712",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/auth/organization",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"organization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth.profile.get",
+					"id": "537f9bac-31fe-409c-97fc-bfa8ff251fa1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/auth/profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth.profile.update",
+					"id": "fd8495ab-403e-4e9e-afd1-3cd9b17eaf87",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country",
+									"value": "US",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "8d871a15-cdbf-4020-8642-226d4cc57aac"
+		},
+		{
+			"name": "organization",
+			"item": [
+				{
+					"name": "organization.get",
+					"id": "09a3958f-cf76-4e1c-8785-3467d83a2711",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/organization",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organization.create",
+					"id": "213c4280-05f1-4d61-ab83-dffaf84375f3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"game\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/organization",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organization.update",
+					"id": "70aeecca-26db-437d-96cb-d9eebf574800",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1eefced2-78df-4ed0-a4ae-bb43faaafe8c"
+								},
+								{
+									"key": "banner",
+									"type": "file",
+									"src": "postman-cloud:///1eefcd9f-02d2-4fa0-b916-013318fd4445"
+								},
+								{
+									"key": "isActive",
+									"value": "false",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/organization/663517a50b5c76c73566e6e7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization",
+								"663517a50b5c76c73566e6e7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organization.social.update",
+					"id": "ade9b63e-af42-4384-9059-3b429148c695",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"twitter\",\r\n    \"url\": \"https://x.com/mine1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/organization/663517a50b5c76c73566e6e7/social",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization",
+								"663517a50b5c76c73566e6e7",
+								"social"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "d2bfbd7e-ccdb-4157-bec9-2ad515b9c05b"
+		},
+		{
+			"name": "game",
+			"item": [
+				{
+					"name": "game.get",
+					"id": "1a6dde45-88c7-45ed-bb0f-a119d7bc7ce6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/game",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"game"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "game.create",
+					"id": "c31ecc99-a3b3-493c-9c20-7fd2d32ac996",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Rainbow Six Siege",
+									"type": "text"
+								},
+								{
+									"key": "banner",
+									"type": "file",
+									"src": "postman-cloud:///1ef098c9-e12d-4340-bfef-5d5661c4aeb7",
+									"disabled": true
+								},
+								{
+									"key": "platforms[]",
+									"value": "pc",
+									"type": "text"
+								},
+								{
+									"key": "platforms[]",
+									"value": "xbox",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/game",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"game"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "game.update",
+					"id": "2dd33706-839e-4795-aaa8-830bc17c1da3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "hi",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1eefcd9d-654d-4290-b1d7-ae7a5d663fe0",
+									"disabled": true
+								},
+								{
+									"key": "banner",
+									"type": "file",
+									"src": "postman-cloud:///1eefcd9f-02d2-4fa0-b916-013318fd4445",
+									"disabled": true
+								},
+								{
+									"key": "platforms[]",
+									"type": "text",
+									"value": "pc"
+								},
+								{
+									"key": "platforms[]",
+									"value": "android",
+									"type": "text"
+								},
+								{
+									"key": "platforms[]",
+									"value": "xbox",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/game/6635412273d68c422ace7a96",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"game",
+								"6635412273d68c422ace7a96"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "ad16c22c-a648-4b64-8512-40e99ee82429"
+		},
+		{
+			"name": "stream",
+			"item": [
+				{
+					"name": "stream.userId",
+					"id": "21bdd264-2b85-434e-8fad-73412570804c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/stream/{{userId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"stream",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "f0d89ad9-8aea-4f96-a4c5-97550344bf6d"
+		},
+		{
+			"name": "broadcast",
+			"item": [
+				{
+					"name": "broadcast.get",
+					"id": "47abee21-6480-4005-bb3f-d893e59950ce",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/broadcast",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"broadcast"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "da7d5acc-6b81-40c3-9fa7-dc848888806d"
+		}
+	],
+	"auth": {
+		"type": "jwt",
+		"jwt": [
+			{
+				"key": "payload",
+				"value": "{\"email\"\r\n: \r\n\"dragon99steel@gmail.com\",\r\n\"image\"\r\n: \r\n\"https://lh3.googleusercontent.com/a/ACg8ocLN3VYu7CDa987wsLX3L4wtyaz81s27Bt37mEcRNU4jOxZSIzk=s96-c\",\r\n\"name\"\r\n: \r\n\"James Fury\"\r\n}",
+				"type": "string"
+			},
+			{
+				"key": "secret",
+				"value": "aAZ1xNjXPCB7kB4gp85dpCKW5K5I94QuUyO5X6343ok=",
+				"type": "string"
+			},
+			{
+				"key": "algorithm",
+				"value": "HS256",
+				"type": "string"
+			},
+			{
+				"key": "isSecretBase64Encoded",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "headerPrefix",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "queryParamKey",
+				"value": "token",
+				"type": "string"
+			},
+			{
+				"key": "header",
+				"value": "{}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "790ecb8a-4988-4391-8f3b-a86f71123693",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "126d879c-19f9-4ed8-8486-e0de9d8c2ec4",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "aec016c8-bcb4-41e5-9fb0-da2770a3b731",
+			"key": "base_url",
+			"value": "http://localhost:8000/api/v1",
+			"type": "string"
+		}
+	]
+}

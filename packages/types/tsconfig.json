@@ -1,0 +1,12 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist"
+  },
+  "include": ["."],
+  "exclude": ["dist", "build"],
+  "ts-node": {
+    "swc": true
+  }
+}

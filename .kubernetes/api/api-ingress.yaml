@@ -1,0 +1,24 @@
+# https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: game-rogue-api
+spec:
+  defaultBackend:
+    service:
+      name: "api-service"
+      port:
+        number: 80
+  rules:
+  - host: api.gameroguetest.com
+    http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: api-service
+            port:
+              number: 80

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
+  "globalEnv": [
+    "NODE_ENV",
+    "API_PORT",
+    "AUTH_GOOGLE_ID",
+    "AUTH_GOOGLE_SECRET",
+    "AUTH_SECRET",
+    "AUTH_TRUST_HOST",
+    "NEXT_PUBLIC_API_URL",
+    "GOOGLE_SERVICE_ACCOUNT",
+    "GOOGLE_STORAGE_BUCKET_NAME",
+    "DB_URL",
+    "GOOGLE_SERVICE_ACCOUNT",
+    "LIVEKIT_API_URL",
+    "LIVEKIT_API_KEY",
+    "LIVEKIT_SECRET_KEY",
+    "NEXT_PUBLIC_LIVEKIT_WS_URL",
+    "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY",
+    "STRIPE_SECRET_KEY",
+    "STRIPE_WEBHOOK_SECRET"
+  ],
+  "pipeline": {
+    "build": {
+      "outputs": [
+        "dist/**",
+        ".next/**",
+        "!.next/cache/**",
+        "public/dist/**"
+      ],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "test": {
+      "outputs": [
+        "coverage/**"
+      ],
+      "dependsOn": []
+    },
+    "lint": {
+      "dependsOn": ["^type-check"]
+    },
+    "type-check": {
+      "dependsOn": []
+    },
+    "prettier": {
+      "dependsOn": []
+    },
+    "storybook": {
+      "dependsOn": []
+    },
+    "prettier:fix": {
+      "dependsOn": []
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}

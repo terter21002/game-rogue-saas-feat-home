@@ -1,0 +1,23 @@
+{
+  "extends": "@repo/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@ui/*": ["../../packages/ui/src/*"],
+      "@auth/*": [
+        "../../node_modules/.pnpm/@auth+core@0.30.0/node_modules/@auth/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "next.config.js",
+    "prettier.config.js",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}
